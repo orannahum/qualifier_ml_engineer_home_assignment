@@ -1,5 +1,5 @@
 transformers
-torch
+#torch
 pandas
 numpy<2
 seaborn
@@ -7,5 +7,5 @@ matplotlib
 evaluate
 scikit-learn
 transformers[torch]
-keras
-keras_nlp
+ipykernel
+evaluate

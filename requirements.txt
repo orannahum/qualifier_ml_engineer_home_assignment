@@ -9,3 +9,4 @@ scikit-learn
 transformers[torch]
 ipykernel
 evaluate
+nltk

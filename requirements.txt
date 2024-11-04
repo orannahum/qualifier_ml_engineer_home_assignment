@@ -10,3 +10,4 @@ transformers[torch]
 ipykernel
 evaluate
 nltk
+textblob

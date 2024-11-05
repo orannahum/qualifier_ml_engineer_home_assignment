@@ -6,3 +6,4 @@ tensorflow-metal==0.5.0 # for macOS
 huggingface_hub
 datasets
 keras_tuner
+seaborn

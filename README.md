@@ -8,9 +8,9 @@ conda activate qualifier-env
 pip install -r requirements.txt
 
 # create tf env and install requirements-tf.txt
-conda create --name tf-quailifier-env python=3.10
+conda create --name tf-qualifier-env python=3.10
 
-conda activate tf-quailifier-env
+conda activate tf-qualifier-env
 
 pip install -r requirements-tf.txt
 

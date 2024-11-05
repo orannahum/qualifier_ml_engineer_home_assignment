@@ -1,5 +1,5 @@
 transformers
-#torch
+torch
 pandas
 numpy==1.26.4
 seaborn
@@ -14,3 +14,4 @@ textblob
 xgboost
 catboost
 optuna
+python-dotenv

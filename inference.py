@@ -14,8 +14,6 @@ def classify_prompt(prompt):
     try:
         # if it inference i save the model in cache and not pull it from huggingface
         pipe = pipeline("text-classification", model="oranne55/qualifier-model3-finetune-pretrained-transformer")
-
-        
         result = pipe(prompt)
         
         # Extract the label and score (confidence)

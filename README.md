@@ -1,3 +1,6 @@
+![Alt text](image_bengin_or_jailbreak.png)
+
+
 # 0.Create Environments for each part
 
 ### 0.1. Create "qualifier-env" and install requirements.txt
@@ -64,6 +67,8 @@ pip install -r requirements-inference.txt
 ```bash
 python inference.py "Your text to classify here"
 ```
+#### example of result: 
+{'classification': 'benign', 'confidence': 0.9997623562812805, 'latency': 0.46270108222961426}
 
 ### 2.2. Deploy FastAPI Service Using Docker Image (Task 3-faster)
 #### This service is a text classification API built with FastAPI. It uses a pre-trained transformer model to classify input text prompts, returning the predicted label, confidence score, and the latency of the inference process. The API is accessible via HTTP requests, and the service is exposed on port 8000 inside the Docker container, which is mapped to port 8000 on the host machine.
@@ -74,9 +79,6 @@ python inference.py "Your text to classify here"
 ```bash
 docker run -p 8000:8000 oranne5/text-classification-qualifier-api:v1
 ```
-
-#### example of result: 
-{'classification': 'benign', 'confidence': 0.9997623562812805, 'latency': 0.46270108222961426}
 
 #### Open another terminal and post prompt and get response:
 ```bash

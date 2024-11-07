@@ -67,7 +67,7 @@ pip install -r requirements-inference.txt
 ```bash
 python inference.py "Your text to classify here"
 ```
-#### example of result: 
+#### Example of result: 
 {'classification': 'benign', 'confidence': 0.9997623562812805, 'latency': 0.46270108222961426}
 
 ### 2.2. Deploy FastAPI Service Using Docker Image (Task 3-faster)
@@ -90,7 +90,7 @@ curl -X 'POST' \
   }'
 ```
 
-#### example of result(same example from 2.2.)
+#### Example of result(same example from 2.2. -> lower latency)
 {"classification":"benign","confidence":0.9997623562812805,"latency":0.09252357482910156}
 
 

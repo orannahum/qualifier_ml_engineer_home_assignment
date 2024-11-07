@@ -27,7 +27,7 @@ conda activate tf-qualifier-env
 pip install -r requirements-tf.txt
 ```
 
-### 0.2. Create "inference-qualifier-env" and install requirements-tf.txt(for inference)
+### 0.3. Create "inference-qualifier-env" and install requirements-tf.txt(for inference)
 #### just for inference.py 
 ```bash
 conda create --name inference-qualifier-env python=3.10
@@ -106,7 +106,7 @@ curl -X 'POST' \
 
 #### 3.2.2. jailbreak-classifier_model_test.ipynb - notebook that check the model of jackhhao/jailbreak-classifier from: https://huggingface.co/jackhhao/jailbreak-classifier
 
-### 3.3. fast_api_service
+### 3.3. fast_api_service/
 #### conatin all the files for build the image: text-classification-qualifier-api(Dockerfile, main.py, requirements.txt)
 
 

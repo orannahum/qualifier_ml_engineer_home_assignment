@@ -44,7 +44,7 @@ pip install -r requirements-inference.txt
 ### 1.2. 2-traditional_ML_approaches.ipynb (Task 1 + Task 2) -> env:"qualifier-env"
 #### Creating and training of various ML models, such as Logistic Regression, Random Forest, Gradient Boosting, and more. Comparison between training on metadata features alone versus training with metadata features + TFIDF. Training models using boosting techniques such as XGBoost and CatBoost.Performing hyperparameter tuning to select the best model, and generating metrics and a confusion matrix.Finally, saving, uploading, and evaluating the best model and preprocess pipeline.
 
-### 1.3. 3-custom_Neural_Network.ipynb (Task 1 + Task 2) 
+### 1.3. 3-custom_Neural_Network.ipynb (Task 1 + Task 2) -> env:"tf-qualifier-env"
 #### Creating and training Custom Neural Network model. first shuffles and splits the dataset into training (80%) and validation (20%) sets. Then tokenizes and pads the text data, while encoding labels for classification. A neural network model is defined and trained using the training set, with tuning hyperparameters(layer parmas) like embedding size, dense units, and dropout rate tested for optimal performance. The best model is selected based on validation accuracy. After training, the model is evaluated on a test set. A confusion matrix is plotted to visualize the model's performance. The model is used for predictions, providing a label and confidence score for each input text. Finally, Save the pipeline(that include the preprocess and model) and the model, if we want retrain so we uploaded just the model with previous pipeline.
 
 ### 1.4. 4-fine_tune_pretrained_transformer.ipynb (Task 1 + Task 2 + Task 3) -> env:"qualifier-env"

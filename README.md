@@ -4,7 +4,8 @@
 # 0.Create Environments for each part
 
 ### 0.1. Create "qualifier-env" and install requirements.txt
-#### for all notebooks except 3-custom_neural_network.ipynb 
+#### For all notebooks except 3-custom_neural_network.ipynb 
+
 ```bash
 conda create --name qualifier-env python=3.10
 
@@ -14,9 +15,7 @@ pip install -r requirements.txt
 ```
 
 ### 0.2. Create "tf-qualifier-env" and install requirements-tf.txt(for tensorflow)
-
-
-#### just for 3-custom_neural_network.ipynb
+#### Just for 3-custom_neural_network.ipynb
 
 
 ```bash
@@ -28,7 +27,7 @@ pip install -r requirements-tf.txt
 ```
 
 ### 0.3. Create "inference-qualifier-env" and install requirements-tf.txt(for inference)
-#### just for inference.py 
+#### Just for inference.py 
 ```bash
 conda create --name inference-qualifier-env python=3.10
 
@@ -107,7 +106,7 @@ curl -X 'POST' \
 #### 3.2.2. jailbreak-classifier_model_test.ipynb - notebook that check the model of jackhhao/jailbreak-classifier from: https://huggingface.co/jackhhao/jailbreak-classifier
 
 ### 3.3. fast_api_service/
-#### conatin all the files for build the image: text-classification-qualifier-api(Dockerfile, main.py, requirements.txt)
+#### Conatin all the files for build the image: text-classification-qualifier-api(Dockerfile, main.py, requirements.txt)
 
 
 

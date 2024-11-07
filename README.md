@@ -73,15 +73,22 @@ python inference.py "Your text to classify here"
 docker run -p 8000:8000 oranne5/text-classification-qualifier-api:v1
 ```
 
+#### example of result: 
+{'classification': 'benign', 'confidence': 0.9997623562812805, 'latency': 0.46270108222961426}
+
 #### Open another terminal and post prompt and get response:
 ```bash
 curl -X 'POST' \
   'http://localhost:8000/classify' \
   -H 'Content-Type: application/json' \
   -d '{
-    "prompt": ""
+    "prompt": "Your text to classify here"
   }'
 ```
+
+#### example of result(same example from 2.2.)
+{"classification":"benign","confidence":0.9997623562812805,"latency":0.09252357482910156}
+
 
 # 3. Folders
 ### 3.1. datasets/
@@ -94,7 +101,6 @@ curl -X 'POST' \
 #### 3.2.1. example1.ipynb - notebook that fine tune on jackhhao/jailbreak-classification dataset from: https://github.com/jackhhao/llm-warden/blob/main/src/train.py
 
 #### 3.2.2. jailbreak-classifier_model_test.ipynb - notebook that check the model of jackhhao/jailbreak-classifier from: https://huggingface.co/jackhhao/jailbreak-classifier
-
 
 ### 3.3. fast_api_service
 #### conatin all the files for build the image: text-classification-qualifier-api(Dockerfile, main.py, requirements.txt)

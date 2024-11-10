@@ -53,6 +53,7 @@ pip install -r requirements-inference.txt
 #### Loading and check my model from Hungging Face.
 
 # 2. inference
+#### The model used for inference is the one trained in Section 1.4.
 ### 2.1. infernce.py -> env:"inference-qualifier-env" (Task 3)
 #### This Python script performs text classification using a pre-trained Hugging Face model.
 

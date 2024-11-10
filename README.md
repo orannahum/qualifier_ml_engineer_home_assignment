@@ -73,7 +73,7 @@ python inference.py "Your text to classify here"
 ### 2.2. Deploy FastAPI Service Using Docker Image (Task 3-faster)
 #### This service is a text classification API built with FastAPI. It uses a pre-trained transformer model to classify input text prompts, returning the predicted label, confidence score, and the latency of the inference process. The API is accessible via HTTP requests, and the service is exposed on port 8000 inside the Docker container, which is mapped to port 8000 on the host machine.
 
-#### The image store in: https://hub.docker.com/repository/docker/oranne5/text-classification-qualifier-api/general
+#### The image store in: https://hub.docker.com/repository/docker/oranne5/text-classification-qualifier-api
 
 #### To pull the image and run it:
 ```bash
@@ -88,6 +88,28 @@ curl -X POST "http://localhost:8000/classify" -H "Content-Type: application/json
 #### Example of result(same example from 2.2. -> lower latency)
 {"classification":"benign","confidence":0.9997623562812805,"latency":0.09252357482910156}
 
+### 2.3. inference_long_inputs.py -> env:"inference-qualifier-env" (Task 3)
+#### Same like 2.1. but also have handle with large prompt and do window slidind with over lapping.
+```bash
+python inference_long_inputs.py "Your text to classify here"
+```
+
+### 2.4. Deploy FastAPI Service Using Docker Image for long prompt input (Task 3-faster)
+#### Same like 2.2. but also have handle with large prompt and do window slidind with over lapping.
+
+#### The image store in:
+
+#### To pull the image and run it:
+```bash
+docker run -p 8001:8001 text-classification-long-prompt-qualifier-api                          
+```
+
+#### Open another terminal and post prompt and get response:
+```bash
+curl -X POST "http://localhost:8001/classify" -H "Content-Type: application/json" -d "{\"prompt\": \"Your text to classify here\"}"
+```
+#### Example of result(same example from 2.2. -> lower latency)
+{"classification":"benign","latency":0.0012905597686767578}
 
 # 3. Folders
 ### 3.1. datasets/
@@ -104,5 +126,7 @@ curl -X POST "http://localhost:8000/classify" -H "Content-Type: application/json
 ### 3.3. fast_api_service/
 #### Conatin all the files for build the image: text-classification-qualifier-api(Dockerfile, main.py, requirements.txt)
 
+### 3.4. fast_api_service/
+#### Conatin all the files for build the image: text-classification-long-prompt-qualifier-api(Dockerfile, main.py, requirements.txt, preprocessing.py)
 
 

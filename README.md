@@ -1,5 +1,14 @@
 ![Alt text](image_bengin_or_jailbreak.png)
 
+__I Update on 11.11.24 and had files that handle with long inputs:__
+
+***- 6-fine_tune_pretrained_with_long_inputs.ipynb***
+
+***- 7-test_my_hf_model_for_long_inputs.ipynb***
+
+***- inference_long_inputs.py***
+
+***- fast_api_service_for_long_inputs/ (docker app)***
 
 # 0.Create Environments for each part
 
@@ -52,6 +61,16 @@ pip install -r requirements-inference.txt
 ### 1.5. 5-test_my_hf_model.ipynb -> env:"qualifier-env"
 #### Loading and check my model from Hungging Face.
 
+## 1.6. 6-fine_tune_pretrained_with_long_inputs.ipynb (Task 1 + Task 2 + Task 3) -> env:"qualifier-env"
+#### The code is similar to the previous section. Initially, we checked how many prompts contained more than 512 tokens. After that, we performed preprocessing and removed the rows containing more than 512 tokens. We then conducted training and evaluated metrics along with a confusion matrix. Finally, we wanted to test the model on prompts with no length restrictions, so we built the predict_long_text_with_preprocess function. This function processes a list of texts by first preprocessing and tokenizing each text. It splits long texts into chunks (512 tokens with 100 tokens overlap), classifies each chunk using a model, and checks if any chunk is classified as "jailbreak." The final classification for each text is determined by whether any chunk contains "jailbreak." It then returns a list of predictions ("jailbreak" or "benign") for each text. The model is run on the available device (MPS or CPU).
+#### Visual representation of the sliding window technique with overlapping (window_size=512, overlapping_size=100):
+![Alt text](sliding_window_overlaping.png)
+
+#### finally the model upload to my Hungging Face Hub -> https://huggingface.co/oranne55/qualifier-model4-finetune-pretrained-transformer-for-long-inputs
+
+## 1.7. 7-test_my_hf_model_for_long_inputs.ipynb -> env:"qualifier-env"
+#### Loading and check my model for long inputs from Hungging Face.
+
 # 2. inference
 #### The model used for inference is the one trained in Section 1.4.
 ### 2.1. infernce.py -> env:"inference-qualifier-env" (Task 3)
@@ -97,7 +116,7 @@ python inference_long_inputs.py "Your text to classify here"
 ### 2.4. Deploy FastAPI Service Using Docker Image for long prompt input (Task 3-faster)
 #### Same like 2.2. but also have handle with large prompt and do window slidind with over lapping.
 
-#### The image store in:
+#### The image store in: https://hub.docker.com/repository/docker/oranne5/text-classification-long-prompt-qualifier-api
 
 #### To pull the image and run it:
 ```bash
@@ -126,7 +145,7 @@ curl -X POST "http://localhost:8001/classify" -H "Content-Type: application/json
 ### 3.3. fast_api_service/
 #### Conatin all the files for build the image: text-classification-qualifier-api(Dockerfile, main.py, requirements.txt)
 
-### 3.4. fast_api_service/
+### 3.4. fast_api_service_for_long_inputs/
 #### Conatin all the files for build the image: text-classification-long-prompt-qualifier-api(Dockerfile, main.py, requirements.txt, preprocessing.py)
 
 

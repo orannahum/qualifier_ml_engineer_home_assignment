@@ -1,0 +1,4 @@
+.env
+results/
+models_and_pipelines/
+catboost_info/

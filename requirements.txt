@@ -1,0 +1,17 @@
+transformers
+torch
+pandas
+numpy==1.26.4
+seaborn
+matplotlib
+evaluate
+scikit-learn
+transformers[torch]
+ipykernel
+evaluate
+nltk
+textblob
+xgboost
+catboost
+optuna
+python-dotenv

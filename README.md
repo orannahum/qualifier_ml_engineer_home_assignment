@@ -61,14 +61,14 @@ pip install -r requirements-inference.txt
 ### 1.5. 5-test_my_hf_model.ipynb -> env:"qualifier-env"
 #### Loading and check my model from Hungging Face.
 
-## 1.6. 6-fine_tune_pretrained_with_long_inputs.ipynb (Task 1 + Task 2 + Task 3) -> env:"qualifier-env"
+### 1.6. 6-fine_tune_pretrained_with_long_inputs.ipynb (Task 1 + Task 2 + Task 3) -> env:"qualifier-env"
 #### The code is similar to the previous section. Initially, we checked how many prompts contained more than 512 tokens. After that, we performed preprocessing and removed the rows containing more than 512 tokens. We then conducted training and evaluated metrics along with a confusion matrix. Finally, we wanted to test the model on prompts with no length restrictions, so we built the predict_long_text_with_preprocess function. This function processes a list of texts by first preprocessing and tokenizing each text. It splits long texts into chunks (512 tokens with 100 tokens overlap), classifies each chunk using a model, and checks if any chunk is classified as "jailbreak." The final classification for each text is determined by whether any chunk contains "jailbreak." It then returns a list of predictions ("jailbreak" or "benign") for each text. The model is run on the available device (MPS or CPU).
 #### Visual representation of the sliding window technique with overlapping (window_size=512, overlapping_size=100):
 ![Alt text](sliding_window_overlaping.png)
 
 #### finally the model upload to my Hungging Face Hub -> https://huggingface.co/oranne55/qualifier-model4-finetune-pretrained-transformer-for-long-inputs
 
-## 1.7. 7-test_my_hf_model_for_long_inputs.ipynb -> env:"qualifier-env"
+### 1.7. 7-test_my_hf_model_for_long_inputs.ipynb -> env:"qualifier-env"
 #### Loading and check my model for long inputs from Hungging Face.
 
 # 2. inference

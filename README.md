@@ -120,7 +120,7 @@ python inference_long_inputs.py "Your text to classify here"
 
 #### To pull the image and run it:
 ```bash
-docker run -p 8001:8001 text-classification-long-prompt-qualifier-api                          
+docker run -p 8001:8001 oranne5/text-classification-long-prompt-qualifier-api:v1
 ```
 
 #### Open another terminal and post prompt and get response:

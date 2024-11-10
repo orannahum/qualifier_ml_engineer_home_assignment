@@ -81,12 +81,7 @@ docker run -p 8000:8000 oranne5/text-classification-qualifier-api:v1
 
 #### Open another terminal and post prompt and get response:
 ```bash
-curl -X 'POST' \
-  'http://localhost:8000/classify' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "prompt": "Your text to classify here"
-  }'
+curl -X POST "http://localhost:8000/classify" -H "Content-Type: application/json" -d "{\"prompt\": \"Your text to classify here\"}"
 ```
 
 #### Example of result(same example from 2.2. -> lower latency)
